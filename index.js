@@ -6,10 +6,10 @@ app.set("view engine","ejs")
 const knex = require("knex")({
  client: "mysql",
  connection: {
-  host:"concert-db.cyxaauakk2ws.us-east-1.rds.amazonaws.com",
+  host:"terraform-20260116022926931600000005.cyxaauakk2ws.us-east-1.rds.amazonaws.com",
   user: "admin",
-  password: "WorknForMoneyStuff1!",
-  database:"paradise-concerts",
+  password: "YourSecurePassword2!",
+  database:"paradise_donuts",
   port: 3306,
  },
 });
@@ -17,7 +17,7 @@ const knex = require("knex")({
 app.get("/",(req,res) => {
  knex
  .select()
- .from("venues")
+ .from("donutTable")
  .then((result) => {
   res.render("index", {aConcerts: result});
  }); 

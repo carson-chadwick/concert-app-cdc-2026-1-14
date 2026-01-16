@@ -7,16 +7,16 @@
     </style>
     </head>
     <body>
-    Here are the Concert locations and featured donuts: <br /><br />
+    The Ice Cream Donut List: <br /><br />
     <table>
         <thead>
-            <th>Concert Location</th>
-            <th>Featured Donut</th>
+            <th>Ice Cream Donut Type</th>
+            <th>Price</th>
         </thead>
         <% for (let iCount=0; iCount < aConcerts.length; iCount++) { %>
         <tr>
-            <td><%= aConcerts[iCount].location %></td>
-            <td><%= aConcerts[iCount].featured_donut %></td>
+            <td><%= aConcerts[iCount].donutName %></td>
+            <td><%= aConcerts[iCount].donutPrice %></td>
         </tr>
         <% } %>
     </table>
