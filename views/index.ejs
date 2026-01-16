@@ -1,24 +1,64 @@
 <html>
-    <head>
+<head>
     <style>
-        table, td, th {
-            border: 1px solid orange;
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fff4e6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d35400;
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .donut-card {
+            background: #ffe6cc;
+            border-radius: 15px;
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .donut-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+
+        .donut-name {
+            font-size: 1.3em;
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+
+        .donut-price {
+            font-size: 1.1em;
+            color: #6e2c00;
         }
     </style>
-    </head>
-    <body>
-    The Ice Cream Donut List: <br /><br />
-    <table>
-        <thead>
-            <th>Ice Cream Donut Type</th>
-            <th>Price</th>
-        </thead>
-        <% for (let iCount=0; iCount < aConcerts.length; iCount++) { %>
-        <tr>
-            <td><%= aConcerts[iCount].donutName %></td>
-            <td><%= aConcerts[iCount].donutPrice %></td>
-        </tr>
+</head>
+<body>
+    <h1>The Ice Cream Donut Menu</h1>
+
+    <div class="card-container">
+        <% for (let iCount = 0; iCount < aConcerts.length; iCount++) { %>
+        <div class="donut-card">
+            <div class="donut-name"><%= aConcerts[iCount].donutName %></div>
+            <div class="donut-price">$<%= aConcerts[iCount].donutPrice %></div>
+        </div>
         <% } %>
-    </table>
-    </body>
+    </div>
+</body>
 </html>
+
